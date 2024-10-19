@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("clout")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d368660184e483840209375dfacebd9dad7e30ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("clout")]
 [assembly: System.Reflection.AssemblyTitleAttribute("clout")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

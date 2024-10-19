@@ -3243,11 +3243,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kshed\\source\\repos\\clout\\clout.csproj",
+      "projectUniqueName": "C:\\Users\\kshed\\OneDrive\\Desktop\\clout\\clout\\clout.csproj",
       "projectName": "clout",
-      "projectPath": "C:\\Users\\kshed\\source\\repos\\clout\\clout.csproj",
+      "projectPath": "C:\\Users\\kshed\\OneDrive\\Desktop\\clout\\clout\\clout.csproj",
       "packagesPath": "C:\\Users\\kshed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kshed\\source\\repos\\clout\\obj\\",
+      "outputPath": "C:\\Users\\kshed\\OneDrive\\Desktop\\clout\\clout\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

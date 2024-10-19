@@ -39,7 +39,7 @@ namespace clout.Services
                 return null;
             }
 
-            return "user created";
+            return "User created successfully!";
 
 
         }
