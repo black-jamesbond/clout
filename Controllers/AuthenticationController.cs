@@ -1,15 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using clout.Interface;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-namespace clout.clout_DbContext
+namespace clout.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
         private readonly IConfiguration _configuration;
+        private readonly IUserRepository _userRepository;
+        private readonly ILogger<AuthenticationController> _logger;
         public class AuthenticaionRequestBody
         {
             public string? Username { get; set; }
@@ -19,24 +22,30 @@ namespace clout.clout_DbContext
 
         public class User
         {
-            public int UserId { get; set; }
+            //public int UserId { get; set; }
             public string Username { get; set; }
-            public string email { get; set; }
+            public string Email { get; set; }
+            public string Password { get; set; }
 
-            public User(int userId,
+
+            public User(
                         string username,
-                        string email)
+                        string email,
+                        string password)
             {
-                UserId = userId;
+                //UserId = userId;
                 Username = username;
-                this.email = email;
+                Email = email;
+                Password = password;
             }
         }
 
-        public AuthenticationController(IConfiguration configuration)
+        public AuthenticationController(IConfiguration configuration, IUserRepository userRepository, ILogger<AuthenticationController> logger)
         {
             _configuration = configuration ??
                 throw new ArgumentNullException(nameof(configuration));
+            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+            _logger = logger ?? throw new ArgumentNullException(nameof(_logger));
         }
 
         [HttpPost("authenticate")]
@@ -56,9 +65,10 @@ namespace clout.clout_DbContext
                 securityKey, SecurityAlgorithms.HmacSha256);
 
             var claimsForToken = new List<Claim>();
-            claimsForToken.Add(new Claim("sub", user.UserId.ToString()));
+            //claimsForToken.Add(new Claim("sub", user.UserId.ToString()));
             claimsForToken.Add(new Claim("username", user.Username));
-            claimsForToken.Add(new Claim("email", user.email));
+            claimsForToken.Add(new Claim("email", user.Email));
+            claimsForToken.Add(new Claim("password", user.Password));
 
             var jwtSecurityToken = new JwtSecurityToken(
                 _configuration["Authentication:Issuer"],
@@ -76,9 +86,15 @@ namespace clout.clout_DbContext
 
         private User ValidateUserCredentials(string username, string? password)
         {
-            //var user = _userRepository.GetUserByNameAsync(username).Result;
+            var user = _userRepository.GetUserByUsernameAsync(username).Result;
 
-            var Auth_user = new User(1, "user.Username", "user.Email");
+            if (user.Password != password)
+            {
+                _logger.LogInformation("Invalid password");
+                return null;
+            }
+            //Authorized users
+            var Auth_user = new User(user.Username, user.Email, user.Password);
 
             return Auth_user;
 

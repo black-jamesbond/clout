@@ -109,5 +109,19 @@ namespace clout.Repository
             var user = await _context.Users.FirstOrDefaultAsync();
             return user;
         }
+
+        public Task UpdateUserAsync(User user)
+        {
+            // Attach the user entity to the context
+            _context.Users.Attach(user);
+
+            // Mark the entity as modified
+            _context.Entry(user).State = EntityState.Modified;
+
+            // Save changes asynchronously
+            _context.SaveChangesAsync();
+
+            return Task.CompletedTask;
+        }
     }
 }

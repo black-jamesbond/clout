@@ -55,20 +55,21 @@ namespace clout.Controllers
         }
 
         [HttpPost("forgotpassword")]
-        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordModel model)
+        public async Task<IActionResult> ForgotPassword(string email)
         {
-            var result = await _authService.ForgotPasswordAsync(model);
-            if (!result)
-                return BadRequest();
-            return Ok(new { Message = "Password reset link has been sent to your email" });
+            var result = await _authService.ForgotPasswordAsync(email);
+           
+            return Ok(result);
         }
 
         [HttpPost("resetpassword")]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordModel model)
         {
             var result = await _authService.ResetPasswordAsync(model);
-            if (!result)
-                return BadRequest();
+            if (result == null)
+            { 
+                return BadRequest(); 
+            }
             return Ok(new { Message = "Password has been reset successfully" });
         }
     }

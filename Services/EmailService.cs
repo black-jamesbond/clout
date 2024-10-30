@@ -7,6 +7,20 @@ namespace clout.Services
     public class EmailService : IEmailService
     {
         private readonly SmtpClient _smtpClient;
+
+        public EmailService()
+        {
+            _smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new System.Net.NetworkCredential("your-email@gmail.com", "your-email-password"),
+                EnableSsl = true
+            };
+        }
+
+
+
+
         public void SendEmailAsync(EmailModel emailModel)
         {
             var mailMessage = new MailMessage

@@ -8,5 +8,8 @@ namespace clout.Interface
         Task<User> RegisterAsync(RegisterModel model);
         Task<User> LoginAsync(LoginModel model);
         Task<IEnumerable<User>> GetAllUsersAsync();
+        Task<User> GetUserByUsernameAsync(string username);
+        Task<User> GetUserByEmailAsync(string email);
+        Task UpdateUserAsync(User user);
     }
 }

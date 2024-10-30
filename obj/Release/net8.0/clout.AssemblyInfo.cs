@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("clout")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3bb5ff7c0201d57c061ab803bed7527d1276b8f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86916509f3b40ad9a11abe56266304d0d7ca5f4d")]
 [assembly: System.Reflection.AssemblyProductAttribute("clout")]
 [assembly: System.Reflection.AssemblyTitleAttribute("clout")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

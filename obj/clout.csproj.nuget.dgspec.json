@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kshed\\OneDrive\\Desktop\\clout\\clout\\clout.csproj": {}
+    "C:\\Users\\kshed\\OneDrive\\Desktop\\new work\\clout\\clout.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kshed\\OneDrive\\Desktop\\clout\\clout\\clout.csproj": {
+    "C:\\Users\\kshed\\OneDrive\\Desktop\\new work\\clout\\clout.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kshed\\OneDrive\\Desktop\\clout\\clout\\clout.csproj",
+        "projectUniqueName": "C:\\Users\\kshed\\OneDrive\\Desktop\\new work\\clout\\clout.csproj",
         "projectName": "clout",
-        "projectPath": "C:\\Users\\kshed\\OneDrive\\Desktop\\clout\\clout\\clout.csproj",
+        "projectPath": "C:\\Users\\kshed\\OneDrive\\Desktop\\new work\\clout\\clout.csproj",
         "packagesPath": "C:\\Users\\kshed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kshed\\OneDrive\\Desktop\\clout\\clout\\obj\\",
+        "outputPath": "C:\\Users\\kshed\\OneDrive\\Desktop\\new work\\clout\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

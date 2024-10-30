@@ -5,9 +5,9 @@ namespace clout.Interface
 {
     public interface IAuthService
     {
-        Task<User> LoginAsync(LoginModel model);
+        Task<string> LoginAsync(LoginModel model);
         Task<string> SignUpAsync(RegisterModel model);
-        Task<bool> ForgotPasswordAsync(ForgotPasswordModel model);
-        Task<bool> ResetPasswordAsync(ResetPasswordModel model);
+        Task<User> ResetPasswordAsync(ResetPasswordModel model);
+        Task<string> ForgotPasswordAsync(string email);
     }
 }
